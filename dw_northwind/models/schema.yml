@@ -1,0 +1,22 @@
+
+version: 2
+
+sources:
+  - name: northwind
+    database: Northwind
+    schema: dbo
+    tables:
+      - name: Orders
+
+models:
+  - name: dim_calendario
+    description: "tabela de datas do modelo, baseado na menor e maior data em Orders"
+    columns:
+      - name: pk_data
+        description: "Chave primaria dessa tabela, sendo no formato yyyyMMdd"
+        data_tests:
+          - unique
+          - not_null
+
+  
+    

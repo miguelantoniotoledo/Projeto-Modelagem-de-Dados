@@ -69,3 +69,18 @@ Runtime Error
 [0m15:41:15.485650 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000213321BD7F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021333826F60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002132FAA2090>]}
 [0m15:41:15.485650 [debug] [MainThread]: Flushing usage events
 [0m15:41:16.543476 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:25:26.014861 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002BEE10AB3E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002BEDDC51A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002BEE40BCF50>]}
+
+
+============================== 17:25:26.015875 | ab472883-48c0-4ab3-8f19-bf83df2e2042 ==============================
+[0m17:25:26.015875 [info ] [MainThread]: Running with dbt=1.10.15
+[0m17:25:26.015875 [debug] [MainThread]: running dbt with arguments {'log_format': 'default', 'invocation_command': 'dbt run', 'printer_width': '80', 'profiles_dir': 'C:\\Users\\Acer\\.dbt', 'write_json': 'True', 'warn_error': 'None', 'indirect_selection': 'eager', 'partial_parse': 'True', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_path': 'logs', 'version_check': 'True', 'use_experimental_parser': 'False', 'quiet': 'False', 'introspect': 'True', 'empty': 'False', 'log_cache_events': 'False', 'debug': 'False', 'no_print': 'None', 'use_colors': 'True', 'cache_selected_only': 'False', 'target_path': 'None'}
+[0m17:25:26.015875 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\Acer\Documents\Projeto Modelagem de Dados\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m17:25:26.025961 [debug] [MainThread]: Command `dbt run` failed at 17:25:26.025961 after 0.29 seconds
+[0m17:25:26.025961 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002BEE3D37E00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002BEE3E0CE30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002BEE3B44DA0>]}
+[0m17:25:26.025961 [debug] [MainThread]: Flushing usage events
+[0m17:25:27.228473 [debug] [MainThread]: An error was encountered while trying to flush usage events
