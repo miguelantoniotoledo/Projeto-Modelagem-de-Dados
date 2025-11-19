@@ -1,0 +1,7 @@
+name: "dw_northwind"
+version: "1.0.0"
+profile: "dw_northwind"
+
+model-paths: ["models"]
+
+
