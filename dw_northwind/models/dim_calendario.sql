@@ -1,3 +1,8 @@
+{{ config(
+  enabled= true,
+  materialized='table'
+) }}
+
 WITH range_datas AS (
     SELECT
         MIN(orderdate) AS min_data,
@@ -24,12 +29,14 @@ CROSS APPLY (
 
 SELECT
     FORMAT(date_day, 'yyyyMMdd') AS pk_data,
+    FORMAT(date_day, 'yyyyMM') AS ord_abrev_mes_ano,
     CAST(date_day AS DATE) AS data_completa,
     YEAR(date_day) AS ano,
     MONTH(date_day) AS mes,
     DAY(date_day) AS dia,
     DATENAME(WEEKDAY, date_day) AS dia_semana,
 	DATENAME(MONTH, date_day) AS nome_mes_completo,
-	SUBSTRING(DATENAME(MONTH, date_day),0,4) AS nome_mes_abreviado
+	SUBSTRING(DATENAME(MONTH, date_day),0,4) AS nome_mes_abreviado,
+    CONCAT(SUBSTRING(DATENAME(MONTH, date_day),0,4),'-',YEAR(date_day)) AS abrev_mes_ano
 FROM
     date_spine

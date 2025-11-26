@@ -7,6 +7,15 @@ sources:
     schema: dbo
     tables:
       - name: Orders
+      - name: 'Order Details'
+      - name: Products
+      - name: Suppliers
+      - name: Categories
+      - name: Customers
+      - name: Employees
+      - name: EmployeeTerritories
+      - name: Territories
+      - name: Region
 
 models:
   - name: dim_calendario
@@ -17,6 +26,99 @@ models:
         data_tests:
           - unique
           - not_null
+  - name: dim_produtos
+    description: "tabela de cadastro dos produtos, oriundo de Products, Categories e Suppliers"
+    columns:
+      - name: pk_produto
+        description: "Chave primaria dessa tabela, sendo no formato inteiro"
+        data_tests:
+          - unique
+          - not_null
+      - name: sk_fornecedor
+        description: "Chave estrangeira da dim_fornecedores"
+        data_tests:
+          - not_null
+          - relationships:
+             to: ref('dim_fornecedores')
+             field: pk_fornecedor
 
+  - name: dim_clientes
+    description: "tabela de cadastro dos clientes baseada na Customers"
+    columns:
+      - name: pk_cliente
+        description: "Chave primaria dessa tabela, sendo no formato string"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_funcionarios
+    description: "tabela de cadastro dos funcionarios baseada na Employees"
+    columns:
+      - name: pk_funcionario
+        description: "Chave primaria dessa tabela, sendo no formato string"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_fornecedores
+    description: "tabela de cadastro dos funcionarios baseada na Suppliers"
+    columns:
+      - name: pk_fornecedor
+        description: "Chave primaria dessa tabela, sendo no formato inteiro"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: fato_vendas
+    description: "tabela de vendas oriundo de Orders e Order Details"
+    columns:
+      - name: pk_venda
+        description: "Chave primaria dessa tabela, sendo no formato inteiro"
+        data_tests:
+          - unique
+          - not_null
+      - name: sk_dt_venda
+        description: "Chave estrangeira vinda da dim_calendario"
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('dim_calendario')
+              field: pk_data
   
-    
+  - name: fato_vendas_detalhe
+    description: "tabela de detalhes das vendas vindo de Orders, Order Details"
+    columns:
+      - name: pk_detalhe
+        description: "Chave composta do modelo, dado por Orders e Products"
+        data_tests:
+          - unique
+          - not_null
+      - name: sk_venda
+        description: "Chave estrangeira da fato_vendas"
+        data_tests:
+          - not_null
+          - relationships:
+             to: ref('fato_vendas')
+             field: pk_venda
+      - name: sk_produto
+        description: "Chave estrangeira da dim_produtos"
+        data_tests:
+          - not_null
+          - relationships:
+             to: ref('dim_produtos')
+             field: pk_produto
+      - name: sk_funcionario
+        description: "Chave estrangeira da dim_funcionarios"
+        data_tests:
+          - not_null
+          - relationships:
+             to: ref('dim_funcionarios')
+             field: pk_funcionario
+      - name: sk_cliente
+        description: "Chave estrangeira da dim_clientes"
+        data_tests:
+          - not_null
+          - relationships:
+             to: ref('dim_clientes')
+             field: pk_cliente
+      

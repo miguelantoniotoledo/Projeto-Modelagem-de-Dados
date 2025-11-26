@@ -36,4 +36,11 @@ Inicialmente instalamos o dbt próprio do SQL Server por ``pip install dbt_sqlse
 Faça o fork do projeto, navegue até a pasta e execute ``dbt deps`` para instalar dependências do dbt e ``dbt debug`` para verificar se seu ``dbt_project.yml`` e ``model/sources.yml`` estão configurads corretamente
 
 ### Execução do projeto
-Para criação do datawarehouse, execute ``dbt run`` para criação de todas as estruturas de dados
+Após todas as configurações acima você precisa:
+- executar o docker sqlserver_northwind
+- para verificar estruturas de dados e consultar o dw, utilize o SSMS conectado no banco desse docker
+- para alterar ou criar novas estruturas no dw usando o dbt, abra o projeto no Visual Studio e faça o fork do projeto
+
+Para criação do datawarehouse no SQL Server, execute ``dbt run`` para criação de todas as estruturas de dados. Este comando criará as fatos e dimensões criadas no dbt.
+
+Para testar e as restrições da modelagem no dbt estão funcionando ou verificar algum erro, após executar ``dbt run``, execute ``dbt test``.
