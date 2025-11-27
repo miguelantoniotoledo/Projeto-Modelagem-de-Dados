@@ -47,6 +47,6 @@ Para testar e as restrições da modelagem no dbt estão funcionando ou verifica
 
 ### Relatório Final e Dashboard
 
-O dashboard criado pode ser acessado por esse link:
+O dashboard criado pode ser acessado por esse link: [Power BI Dashboard](https://app.powerbi.com/view?r=eyJrIjoiYzhlMzkxNzUtOWExMy00ZjQ2LWFlMjMtZDI2YzRiODRmMDA5IiwidCI6Ijk1MWZmNzU0LWYyYjQtNDA0OS05M2E5LTdhMTBmM2IwMGQ5NCJ9)
 Igualmente o pbix está na pasta ``material final`` deste projeto.
 Um relatório também foi criado para atender à demanda da disciplina e está na mesma pasta.
