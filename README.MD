@@ -44,3 +44,9 @@ Após todas as configurações acima você precisa:
 Para criação do datawarehouse no SQL Server, execute ``dbt run`` para criação de todas as estruturas de dados. Este comando criará as fatos e dimensões criadas no dbt.
 
 Para testar e as restrições da modelagem no dbt estão funcionando ou verificar algum erro, após executar ``dbt run``, execute ``dbt test``.
+
+### Relatório Final e Dashboard
+
+O dashboard criado pode ser acessado por esse link:
+Igualmente o pbix está na pasta ``material final`` deste projeto.
+Um relatório também foi criado para atender à demanda da disciplina e está na mesma pasta.
