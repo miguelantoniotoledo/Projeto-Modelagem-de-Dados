@@ -1,0 +1,4 @@
+# BIBLIOTECAS A SEREM BAIXADAS
+pyodbc
+pandas
+requests
