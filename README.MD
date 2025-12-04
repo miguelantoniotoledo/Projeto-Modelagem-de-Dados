@@ -3,9 +3,11 @@ Projeto da disciplina de Modelagem de Dados no Instituto Federal de Goiás.
 A ideia é usar um banco transacional para criação de um datawarehouse como prática final do módulo.
 
 ### Base de dados
+
 - sql-server-samples: disponível em https://github.com/microsoft/sql-server-samples/blob/master/samples/databases/northwind-pubs/instnwnd.sql
 
 ### Tecnologias usadas e requisitos
+
 - docker (imagem mssql/server-2019-latest)
 - SQL Server Management Studio
 - Visual Code Studio
@@ -14,6 +16,7 @@ A ideia é usar um banco transacional para criação de um datawarehouse como pr
 - Power BI
 
 ### Iniciando o projeto: banco transacional
+
 Como passo inicial deve-se criar o banco de dados transacional que será usado como base do datawarehouse.
 Para isso:
 - executar o docker com a imagem acima ou correspondente
@@ -28,7 +31,12 @@ docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=SuaSenhaForte123!" \
 - também no SSMS criar o datawarehouse, outro banco de dados, chamaremos de ``dw_northwind``
 
 ### Populando o banco transacional
+
 Execute o SQL disponível em "Base de dados" no SSMS no banco ``Northwind``
+
+### Enriquecimento de dados
+
+Execute ``python main.py`` do projeto no Visual Code inserindo as credenciais do banco de dados para inclusão dos dados de coordenadas (latitude e longitude) das cidades da ``dim_clientes`` e ``dim_fornecedores``.
 
 ### Iniciando o dbt
 Inicialmente instalamos o dbt próprio do SQL Server por ``pip install dbt_sqlserver`` na sua IDE
