@@ -34,10 +34,6 @@ docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=SuaSenhaForte123!" \
 
 Execute o SQL disponível em "Base de dados" no SSMS no banco ``Northwind``
 
-### Enriquecimento de dados
-
-Execute ``python main.py`` do projeto no Visual Code inserindo as credenciais do banco de dados para inclusão dos dados de coordenadas (latitude e longitude) das cidades da ``dim_clientes`` e ``dim_fornecedores``.
-
 ### Iniciando o dbt
 Inicialmente instalamos o dbt próprio do SQL Server por ``pip install dbt_sqlserver`` na sua IDE
 
@@ -52,6 +48,10 @@ Após todas as configurações acima você precisa:
 Para criação do datawarehouse no SQL Server, execute ``dbt run`` para criação de todas as estruturas de dados. Este comando criará as fatos e dimensões criadas no dbt.
 
 Para testar e as restrições da modelagem no dbt estão funcionando ou verificar algum erro, após executar ``dbt run``, execute ``dbt test``.
+
+### Enriquecimento de dados
+
+Execute ``python main.py`` do projeto no Visual Code inserindo as credenciais do banco de dados para inclusão dos dados de coordenadas (latitude e longitude) das cidades da ``dim_clientes`` e ``dim_fornecedores``.
 
 ### Relatório Final e Dashboard
 
